@@ -1,0 +1,83 @@
+{
+  "animal": "MONSTER",
+  "version": "1.0.0",
+  "study_id": "demo-threshold-fragility",
+  "preregistration": {
+    "frozen_at": "2026-02-01T09:00:00Z",
+    "protocol_id": "protocol-v1",
+    "registered_before_outcomes": true,
+    "artifact": "preregistration.md"
+  },
+  "metric": {
+    "name": "balanced accuracy",
+    "direction": "higher_is_better",
+    "tolerance": 0.75,
+    "uncertainty_method": "illustrative only"
+  },
+  "baseline": {
+    "name": "conventional-threshold-model",
+    "matched": true,
+    "notes": "Same inputs and held-out cases."
+  },
+  "conditions": [
+    {
+      "family": "thresholds",
+      "severity": 0.0,
+      "seed": 11,
+      "candidate": 0.91,
+      "baseline": 0.84,
+      "registered": true,
+      "status": "complete",
+      "notes": ""
+    },
+    {
+      "family": "thresholds",
+      "severity": 0.2,
+      "seed": 11,
+      "candidate": 0.72,
+      "baseline": 0.81,
+      "registered": true,
+      "status": "complete",
+      "notes": "Candidate falls below preregistered tolerance."
+    },
+    {
+      "family": "noise",
+      "severity": 0.1,
+      "seed": 11,
+      "candidate": null,
+      "baseline": 0.8,
+      "registered": true,
+      "status": "missing",
+      "notes": "Candidate run artifact missing."
+    }
+  ],
+  "envelope": {
+    "worst": 0.72,
+    "best": 0.91,
+    "aggregate": 0.815,
+    "candidate_minus_baseline": -0.015,
+    "per_family": {
+      "thresholds": {
+        "worst": 0.72,
+        "best": 0.91
+      }
+    }
+  },
+  "failure_boundaries": [
+    {
+      "family": "thresholds",
+      "first_failing_severity": 0.2,
+      "status": "failure_observed",
+      "evidence": "Below 0.75 tolerance."
+    },
+    {
+      "family": "noise",
+      "first_failing_severity": null,
+      "status": "unknown",
+      "evidence": "Registered candidate result missing."
+    }
+  ],
+  "deviations": [],
+  "decision": "FAIL",
+  "summary": "Fail: a predeclared threshold shift breaks the tolerance; the missing noise cell also prevents a pass."
+}
