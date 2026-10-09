@@ -1,0 +1,66 @@
+{
+  "animal": "MONSTER",
+  "version": "1.0.0",
+  "study_id": "",
+  "frozen_at": null,
+  "claim": "",
+  "estimand": "",
+  "primary_metric": {
+    "name": "",
+    "direction": "higher_is_better",
+    "uncertainty_method": ""
+  },
+  "tolerance": null,
+  "mandatory_families": [
+    {
+      "family": "noise",
+      "severity_levels": [],
+      "rationale": ""
+    },
+    {
+      "family": "missingness",
+      "severity_levels": [],
+      "rationale": ""
+    },
+    {
+      "family": "timing",
+      "severity_levels": [],
+      "rationale": ""
+    },
+    {
+      "family": "scaling",
+      "severity_levels": [],
+      "rationale": ""
+    },
+    {
+      "family": "thresholds",
+      "severity_levels": [],
+      "rationale": ""
+    },
+    {
+      "family": "seeds",
+      "values": [],
+      "rationale": ""
+    },
+    {
+      "family": "nulls",
+      "cases": [],
+      "rationale": ""
+    },
+    {
+      "family": "adversarial_counterexamples",
+      "cases": [],
+      "rationale": ""
+    }
+  ],
+  "baseline": {
+    "name": "",
+    "matched_inputs": true,
+    "matched_information_access": true,
+    "compute_budget": "",
+    "tuning_allowance": ""
+  },
+  "exclusion_rule": "",
+  "analysis_plan": "",
+  "artifact": ""
+}
