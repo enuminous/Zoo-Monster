@@ -1,0 +1,34 @@
+{
+  "animal": "MONSTER",
+  "version": "1.0.0",
+  "study_id": "",
+  "preregistration": {
+    "frozen_at": null,
+    "protocol_id": "",
+    "registered_before_outcomes": false,
+    "artifact": null
+  },
+  "metric": {
+    "name": "",
+    "direction": "higher_is_better",
+    "tolerance": 0,
+    "uncertainty_method": ""
+  },
+  "baseline": {
+    "name": "",
+    "matched": false,
+    "notes": ""
+  },
+  "conditions": [],
+  "envelope": {
+    "worst": null,
+    "best": null,
+    "aggregate": null,
+    "candidate_minus_baseline": null,
+    "per_family": {}
+  },
+  "failure_boundaries": [],
+  "deviations": [],
+  "decision": "N/A",
+  "summary": "Complete all registered condition cells and use only predeclared tolerances."
+}
