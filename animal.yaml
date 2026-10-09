@@ -1,0 +1,35 @@
+name: MONSTER
+full_name: Nuisance and Out-of-control Growth Stress Test
+version: 1.0.0
+purpose: Test robustness against preregistered plausible nuisance changes and adversarial counterexamples.
+inputs:
+  - frozen_claim_and_estimand
+  - primary_metric_and_tolerance
+  - preregistered_perturbation_families_and_severity
+  - registered_seeds_and_nulls
+  - matched_conventional_baseline_protocol
+  - complete_per_condition_results
+transformation:
+  - execute_all_registered_grid_cells_for_candidate_and_baseline
+  - report_per_condition_performance_and_uncertainty
+  - compute_full_performance_envelope_and_paired_comparison
+  - identify_first_failure_boundary_per_family
+outputs:
+  - preregistration_record
+  - complete_performance_envelope
+  - matched_baseline_comparison
+  - first_failure_boundaries
+  - deviations_and_exclusions
+  - gate_decision
+pass_criteria:
+  - all_mandatory_registered_cells_within_predeclared_tolerances
+  - complete_matched_baseline
+  - no_success_confined_to_narrow_setting
+  - all_material_cells_and_outcomes_provenanced
+fail_criteria:
+  - any_required_cell_exceeds_tolerance
+  - null_or_counterexample_defeats_claim
+  - success_depends_on_narrow_setting
+na_criteria:
+  - missing_preregistration_baseline_metric_or_material_cell_provenance
+rule: N/A is not a pass; only predeclared tolerances determine the gate.
