@@ -1,0 +1,253 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MONSTER stress-test report",
+  "type": "object",
+  "required": [
+    "animal",
+    "version",
+    "study_id",
+    "preregistration",
+    "metric",
+    "baseline",
+    "conditions",
+    "envelope",
+    "failure_boundaries",
+    "decision",
+    "summary"
+  ],
+  "properties": {
+    "animal": {
+      "const": "MONSTER"
+    },
+    "version": {
+      "type": "string"
+    },
+    "study_id": {
+      "type": "string"
+    },
+    "preregistration": {
+      "type": "object",
+      "required": [
+        "frozen_at",
+        "protocol_id",
+        "registered_before_outcomes"
+      ],
+      "properties": {
+        "frozen_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "protocol_id": {
+          "type": "string"
+        },
+        "registered_before_outcomes": {
+          "type": "boolean"
+        },
+        "artifact": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "metric": {
+      "type": "object",
+      "required": [
+        "name",
+        "direction",
+        "tolerance"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "direction": {
+          "enum": [
+            "higher_is_better",
+            "lower_is_better",
+            "target_range"
+          ]
+        },
+        "tolerance": {
+          "type": "number"
+        },
+        "uncertainty_method": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "baseline": {
+      "type": "object",
+      "required": [
+        "name",
+        "matched",
+        "notes"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "matched": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "conditions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "family",
+          "severity",
+          "seed",
+          "candidate",
+          "baseline",
+          "registered",
+          "status"
+        ],
+        "properties": {
+          "family": {
+            "type": "string"
+          },
+          "severity": {
+            "type": "number"
+          },
+          "seed": {
+            "type": [
+              "integer",
+              "string"
+            ]
+          },
+          "candidate": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "baseline": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "registered": {
+            "type": "boolean"
+          },
+          "status": {
+            "enum": [
+              "complete",
+              "failed_run",
+              "missing",
+              "invalid"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          },
+          "artifact": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "envelope": {
+      "type": "object",
+      "required": [
+        "worst",
+        "best",
+        "aggregate",
+        "candidate_minus_baseline"
+      ],
+      "properties": {
+        "worst": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "best": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "aggregate": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "candidate_minus_baseline": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "per_family": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": true
+    },
+    "failure_boundaries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "family",
+          "first_failing_severity",
+          "status"
+        ],
+        "properties": {
+          "family": {
+            "type": "string"
+          },
+          "first_failing_severity": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "status": {
+            "enum": [
+              "failure_observed",
+              "not_observed_within_tested_range",
+              "unknown"
+            ]
+          },
+          "evidence": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "deviations": {
+      "type": "array"
+    },
+    "decision": {
+      "enum": [
+        "PASS",
+        "FAIL",
+        "N/A"
+      ]
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}
