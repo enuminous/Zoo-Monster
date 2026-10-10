@@ -1,5 +1,11 @@
 # MONSTER — Nuisance and Out-of-control Growth Stress Test
 
+<!-- ENUMINOUS-NETWORK:START -->
+**eNuminous network:** [All repositories](https://enuminous.github.io/EFMW/repositories.html) · [EFMW](https://enuminous.github.io/EFMW/) · [102 equations](https://github.com/enuminous/Monolithic_102_EFMW) · [165 triplets](https://enuminous.github.io/FieldSpace/) · [Zoo](https://enuminous.github.io/Tortoise/) · [Lean](https://enuminous.github.io/Aristotle-102-Monolithic-Lean/) · [Engine](https://enuminous.github.io/Archimedes-Engine/) · [Papers](https://enuminous.github.io/medium/papers-essays-index.html) · [Audit](https://github.com/enuminous/EFMW_Post156_Zoo_Audit/blob/main/portfolio/INTERLOCK_AUDIT.md)
+
+[Repository](https://github.com/enuminous/Zoo-Monster) · This repository is linked through its source; GitHub Pages is not enabled.
+<!-- ENUMINOUS-NETWORK:END -->
+
 **Zoo animal specification · version 1.0.0**
 
 MONSTER tests whether a result survives plausible nuisance changes and adversarial counterexamples. It requires perturbation families and severity levels to be preregistered, compares against matched conventional baselines, reports the full performance envelope, and identifies the first failure boundary.
