@@ -105,3 +105,7 @@ MONSTER tests **survival under hostile conditions**. It does not establish that 
 ## License
 
 CC0-1.0. See `LICENSE`.
+
+## Lean decision-stage coverage
+
+[Source-pinned shared Lean verification](LEAN_VERIFICATION.md) covers the decision stage and records the remaining implementation obligations.
